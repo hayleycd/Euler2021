@@ -6,11 +6,15 @@ def largest_prime_factor(number_to_check):
     for potential_factor in range(1, number_to_check // 2):
         if number_to_check % potential_factor == 0:
             factor_pair = number_to_check // potential_factor
-            is_prime = is_prime(factor_pair)
-            if is_prime:
+            prime = is_prime(factor_pair)
+            if prime:
                 return factor_pair
 
 
 def is_prime(factor_to_check):
-    # to do: write a function to determine if a number is prime.
+    # works for small numbers. Will refine for larger numbers soon.
+    for i in range(2, factor_to_check):
+        if (factor_to_check % i) == 0:
+            return False
+
     return True
